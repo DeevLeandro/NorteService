@@ -819,7 +819,9 @@ input[type="reset"] {
 }
 
 .image-badge span {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
+  display:flex ;
+  justify-content: center;
 }
 
 .image-badge p {

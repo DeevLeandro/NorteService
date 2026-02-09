@@ -179,7 +179,7 @@ function App() {
   };
 
     const openFacebook = () => {
-    window.open('https://Facebook.com/norteservice', '_blank');
+    window.open('https://www.facebook.com/profile.php?id=61579336403097&rdid=OGNiU1LEnksv1rnw&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DBf52pCqT%2F#', '_blank');
   };
 
     const services = [
