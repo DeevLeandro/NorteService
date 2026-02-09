@@ -17,6 +17,7 @@ body {
   color: #1a1a1a;
   overflow-x: hidden;
   background-color: #FFFFFF;
+  -webkit-tap-highlight-color: transparent; /* Remove highlight azul no iOS */
 }
 
 /* NOVA PALHETA DE CORES - Cinza clarinho com branco, preto e amarelo como destaque */
@@ -39,6 +40,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%; /* Previne ajuste de texto no iOS */
 }
 
 .container {
@@ -85,6 +87,35 @@ html {
   margin-right: auto;
 }
 
+/* CORREÇÕES PARA iOS - Botões e Inputs */
+/* Remove estilos padrão do iOS para botões */
+button,
+input,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+/* Remove o arredondamento padrão do iOS */
+button {
+  border-radius: 50px;
+}
+
+/* Garante que os botões mantenham a cor correta no iOS */
+.btn,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none; /* Remove gradientes padrão do iOS */
+}
+
 /* Botões */
 .btn {
   display: inline-flex;
@@ -101,6 +132,8 @@ html {
   font-family: 'Poppins', sans-serif;
   text-align: center;
   justify-content: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Remove highlight no iOS */
+  tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .btn-primary {
@@ -108,11 +141,17 @@ html {
   color: var(--preto-suave);
   box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
   font-weight: 700;
+  -webkit-background-clip: padding-box; /* Para Safari */
+  background-clip: padding-box;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 30px rgba(245, 158, 11, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0); /* Feedback tátil para mobile */
 }
 
 .btn-secondary {
@@ -128,9 +167,13 @@ html {
   box-shadow: 0 6px 25px rgba(229, 231, 235, 0.4);
 }
 
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
 /* Header - Nav em cinza escuro */
 .header {
-  background: var(--cinza-escuro);
+  background: linear-gradient(135deg, rgb(201, 201, 201), var(--cinza-escuro));
   padding: 10px 0;
   position: sticky;
   top: 0;
@@ -225,6 +268,8 @@ html {
   cursor: pointer;
   padding: 0;
   z-index: 1001;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .menu-toggle span {
@@ -263,6 +308,7 @@ html {
   position: relative;
   padding: 8px 0;
   font-size: 1rem;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav a::after {
@@ -287,6 +333,8 @@ html {
   border-radius: 50px;
   font-weight: 700;
   box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 
 .nav a.nav-cta::after {
@@ -296,6 +344,10 @@ html {
 .nav a.nav-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+.nav a.nav-cta:active {
+  transform: translateY(0);
 }
 
 /* Hero Carousel - MODERNO com cores neutras */
@@ -411,6 +463,9 @@ html {
   align-items: center;
   justify-content: center;
   font-weight: 700;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .carousel-control:hover {
@@ -418,6 +473,10 @@ html {
   border-color: var(--amarelo-primario);
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 8px 30px rgba(245, 158, 11, 0.4);
+}
+
+.carousel-control:active {
+  transform: translateY(-50%) scale(1);
 }
 
 .carousel-control.prev {
@@ -448,6 +507,8 @@ html {
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .indicator.active {
@@ -460,6 +521,10 @@ html {
 .indicator:hover {
   background: rgba(255, 255, 255, 0.7);
   transform: scale(1.2);
+}
+
+.indicator:active {
+  transform: scale(1);
 }
 
 /* Animações */
@@ -557,6 +622,10 @@ html {
   box-shadow: 0 6px 25px rgba(245, 158, 11, 0.3);
   transform: translateY(20px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 
 .service-card:hover .btn-service-quick {
@@ -566,6 +635,10 @@ html {
 .btn-service-quick:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 8px 35px rgba(245, 158, 11, 0.4);
+}
+
+.btn-service-quick:active {
+  transform: translateY(0) scale(1);
 }
 
 .service-info {
@@ -883,6 +956,18 @@ html {
   font-family: 'Inter', sans-serif;
   transition: all 0.3s;
   background-color: var(--branco);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Correção específica para selects no iOS */
+.form-group select {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
+  padding-right: 45px;
 }
 
 .form-group input:focus,
@@ -899,6 +984,8 @@ html {
   padding: 18px 50px;
   font-size: 1.15rem;
   margin-top: 20px;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .form-note {
@@ -990,6 +1077,9 @@ html {
   box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
   transition: all 0.3s ease;
   font-size: 1.8rem;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .floating-top button {
@@ -1005,6 +1095,11 @@ html {
 
 .floating-top button:hover {
   box-shadow: 0 10px 40px rgba(55, 65, 81, 0.6);
+}
+
+.floating-whatsapp button:active,
+.floating-top button:active {
+  transform: translateY(-2px);
 }
 
 /* Footer */
@@ -1067,6 +1162,7 @@ html {
   padding: 10px 0;
   opacity: 0.9;
   font-size: 1.05rem;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .footer-links a:hover {
@@ -1099,6 +1195,9 @@ html {
   color: var(--branco);
   backdrop-filter: blur(10px);
   font-size: 1.05rem;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .social-btn:hover {
@@ -1106,6 +1205,10 @@ html {
   background-color: rgba(255, 255, 255, 0.2);
   border-color: var(--amarelo-primario);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn:active {
+  transform: translateY(0);
 }
 
 .footer-bottom {
@@ -1307,5 +1410,38 @@ html {
 
   .carousel-control.next {
     right: 10px;
+  }
+}
+
+/* CORREÇÕES ESPECÍFICAS PARA SAFARI/iOS */
+@media not all and (min-resolution:.001dpcm) { 
+  @supports (-webkit-appearance:none) {
+    /* Safari 10.1+ */
+    .btn-primary,
+    .btn-secondary,
+    .btn-service-quick,
+    .nav a.nav-cta {
+      -webkit-background-clip: border-box;
+      background-clip: border-box;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border-radius: 12px !important;
+    }
+    
+    .btn {
+      border-radius: 50px !important;
+    }
+  }
+}
+
+/* Previne zoom em inputs no iOS */
+@media screen and (max-width: 768px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important; /* Previne zoom no iOS */
   }
 }

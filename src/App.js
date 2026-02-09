@@ -308,7 +308,7 @@ function App() {
           <div className="logo-container">
           <div className="logo">
             <img 
-              src='/images/Logo.png' 
+              src='/images/LogoFinal.png' 
               alt='Logo Norte Service'
               className="logo-image"
             />
