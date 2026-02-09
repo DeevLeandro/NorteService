@@ -572,7 +572,7 @@ function App() {
                 
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="servico">Tipo de Serviço *</label>
+                    <label htmlFor="servico">Tipo de Serviços *</label>
                     <select 
                       id="servico" 
                       name="servico" 
