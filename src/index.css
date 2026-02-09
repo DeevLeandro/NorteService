@@ -19,19 +19,22 @@ body {
   background-color: #FFFFFF;
 }
 
-/* Palheta de cores da Norte Service */
+/* NOVA PALHETA DE CORES - Cinza clarinho com branco, preto e amarelo como destaque */
 :root {
-  --azul-primario: #003366;
-  --azul-medio: #0052A3;
-  --azul-marinho: #0066CC;
-  --azul-claro: #4A90E2;
-  --amarelo: #FFC107;
-  --amarelo-escuro: #FFA000;
+  --cinza-clarissimo: #F9FAFB;      /* Cinza mais claro - para fundos principais */
+  --cinza-claro: #F3F4F6;           /* Cinza claro - para fundos secundários */
+  --cinza-medio-claro: #E5E7EB;     /* Cinza médio claro - para bordas e separadores */
+  --cinza-medio: #9CA3AF;           /* Cinza médio - para textos secundários */
+  --cinza-escuro: #505864;          /* Cinza escuro - para títulos e textos principais */
+  --preto-suave: #111827;           /* Preto suave - para textos importantes */
+  
+  /* Cores de destaque - Mantendo o amarelo */
+  --amarelo-primario: #F59E0B;      /* Amarelo dourado suave */
+  --amarelo-hover: #D97706;         /* Amarelo mais escuro para hover */
+  --amarelo-claro: #FDE68A;         /* Amarelo claro para efeitos sutis */
+  
   --branco: #FFFFFF;
-  --cinza-claro: #F8F9FA;
-  --cinza-medio: #6c757d;
-  --cinza-escuro: #2c3e50;
-  --whatsapp-green: #25D366;
+  --whatsapp-green: #25D366;        /* Mantido o verde do WhatsApp */
 }
 
 html {
@@ -53,7 +56,7 @@ html {
   font-size: 2.8rem;
   margin-bottom: 20px;
   text-align: center;
-  color: var(--azul-marinho);
+  color: var(--preto-suave);
   position: relative;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -68,7 +71,7 @@ html {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--azul-primario), var(--amarelo));
+  background: linear-gradient(90deg, var(--cinza-escuro), var(--amarelo-primario));
   border-radius: 2px;
 }
 
@@ -101,40 +104,39 @@ html {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--amarelo), var(--amarelo-escuro));
-  color: var(--azul-marinho);
-  box-shadow: 0 4px 20px rgba(255, 193, 7, 0.4);
+  background: linear-gradient(135deg, var(--amarelo-primario), var(--amarelo-hover));
+  color: var(--preto-suave);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
   font-weight: 700;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 30px rgba(255, 193, 7, 0.5);
+  box-shadow: 0 6px 30px rgba(245, 158, 11, 0.4);
 }
 
 .btn-secondary {
   background-color: var(--branco);
-  color: var(--azul-primario);
-  border: 2px solid var(--branco);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  color: var(--preto-suave);
+  border: 2px solid var(--cinza-medio-claro);
+  box-shadow: 0 4px 15px rgba(229, 231, 235, 0.3);
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--cinza-claro);
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 25px rgba(229, 231, 235, 0.4);
 }
 
-
-/* Header - Nav Azul Gradiente */
+/* Header - Nav em cinza escuro */
 .header {
-  background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-primario) 50%, var(--azul-medio) 100%);
-  padding: 10px 0; /* REDUZIDO de 20px para 10px (ou menos) */
+  background: var(--cinza-escuro);
+  padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 30px rgba(0, 51, 102, 0.3);
-  min-height: auto; /* Garante altura mínima automática */
+  box-shadow: 0 4px 30px rgba(55, 65, 81, 0.2);
+  min-height: auto;
 }
 
 .header .container {
@@ -142,20 +144,20 @@ html {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  height: 100%; /* Garante que o container ocupe toda altura */
+  height: 100%;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   z-index: 1001;
-  height: 100%; /* Ocupa toda altura disponível */
+  height: 100%;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  height: 100%; /* Herda altura do container */
+  height: 100%;
 }
 
 .logo-image {
@@ -167,22 +169,22 @@ html {
 
 /* Estilos para desktop (padrão) */
 .logo-image {
-  width: 220px; /* Ajuste conforme o tamanho da sua imagem */
-  max-height: 100px; /* ADICIONADO: limita altura máxima */
+  width: 220px;
+  max-height: 100px;
 }
 
 /* Media query para tablets */
 @media (max-width: 1024px) {
   .logo-image {
     width: 200px;
-    max-height: 100px; /* ADICIONADO */
+    max-height: 100px;
   }
 }
 
 /* Media query para mobile */
 @media (max-width: 768px) {
   .header {
-    padding: 8px 0; /* REDUZIDO também para mobile */
+    padding: 8px 0;
   }
   
   .logo-container {
@@ -193,7 +195,7 @@ html {
   .logo-image {
     width: 180px;
     max-width: 100%;
-    max-height: 100px; /* ADICIONADO */
+    max-height: 100px;
     margin-right: 150px;
   }
 }
@@ -201,12 +203,12 @@ html {
 /* Media query para mobile pequeno */
 @media (max-width: 480px) {
   .header {
-    padding: 5px 0; /* REDUZIDO ainda mais para mobile pequeno */
+    padding: 5px 0;
   }
   
   .logo-image {
     width: 150px;
-    max-height: 100px; /* ADICIONADO */
+    max-height: 100px;
     margin-right: 150px;
   }
 }
@@ -270,7 +272,7 @@ html {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--amarelo);
+  background-color: var(--amarelo-primario);
   transition: width 0.3s ease;
 }
 
@@ -279,12 +281,12 @@ html {
 }
 
 .nav a.nav-cta {
-  background: linear-gradient(135deg, var(--amarelo), var(--amarelo-escuro));
-  color: var(--azul-marinho);
+  background: linear-gradient(135deg, var(--amarelo-primario), var(--amarelo-hover));
+  color: var(--preto-suave);
   padding: 10px 24px;
   border-radius: 50px;
   font-weight: 700;
-  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
 }
 
 .nav a.nav-cta::after {
@@ -293,15 +295,15 @@ html {
 
 .nav a.nav-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.5);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
 }
 
-/* Hero Carousel - MODERNO */
+/* Hero Carousel - MODERNO com cores neutras */
 .hero-carousel {
   position: relative;
   height: 700px;
   overflow: hidden;
-  background-color: var(--azul-marinho);
+  background-color: var(--cinza-escuro);
 }
 
 .carousel-container {
@@ -335,9 +337,9 @@ html {
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, 
-    rgba(0, 51, 102, 0.85) 0%, 
-    rgba(0, 102, 204, 0.75) 50%, 
-    rgba(0, 51, 102, 0.85) 100%
+    rgba(55, 65, 81, 0.85) 0%, 
+    rgba(55, 65, 81, 0.75) 50%, 
+    rgba(55, 65, 81, 0.85) 100%
   );
   z-index: 2;
 }
@@ -412,10 +414,10 @@ html {
 }
 
 .carousel-control:hover {
-  background: rgba(255, 193, 7, 0.9);
-  border-color: var(--amarelo);
+  background: rgba(245, 158, 11, 0.9);
+  border-color: var(--amarelo-primario);
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 8px 30px rgba(255, 193, 7, 0.5);
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.4);
 }
 
 .carousel-control.prev {
@@ -449,8 +451,8 @@ html {
 }
 
 .indicator.active {
-  background: var(--amarelo);
-  border-color: var(--amarelo);
+  background: var(--amarelo-primario);
+  border-color: var(--amarelo-primario);
   width: 40px;
   border-radius: 6px;
 }
@@ -474,7 +476,7 @@ html {
 
 /* Serviços - COM FOTOS */
 .servicos {
-  background-color: var(--branco);
+  background-color: var(--cinza-clarissimo);
   padding: 100px 0;
 }
 
@@ -489,16 +491,16 @@ html {
   background-color: var(--branco);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 51, 102, 0.1);
+  box-shadow: 0 10px 40px rgba(229, 231, 235, 0.4);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid transparent;
+  border: 2px solid var(--cinza-medio-claro);
   position: relative;
 }
 
 .service-card:hover {
   transform: translateY(-15px);
-  box-shadow: 0 20px 60px rgba(0, 102, 204, 0.2);
-  border-color: var(--azul-primario);
+  box-shadow: 0 20px 60px rgba(229, 231, 235, 0.6);
+  border-color: var(--amarelo-primario);
 }
 
 .service-image {
@@ -526,8 +528,8 @@ html {
   bottom: 0;
   background: linear-gradient(180deg, 
     transparent 0%, 
-    rgba(0, 51, 102, 0.7) 70%, 
-    rgba(0, 51, 102, 0.9) 100%
+    rgba(55, 65, 81, 0.7) 70%, 
+    rgba(55, 65, 81, 0.9) 100%
   );
   display: flex;
   align-items: flex-end;
@@ -542,8 +544,8 @@ html {
 }
 
 .btn-service-quick {
-  background: linear-gradient(135deg, var(--amarelo), var(--amarelo-escuro));
-  color: var(--azul-marinho);
+  background: linear-gradient(135deg, var(--amarelo-primario), var(--amarelo-hover));
+  color: var(--preto-suave);
   border: none;
   padding: 14px 28px;
   border-radius: 50px;
@@ -552,7 +554,7 @@ html {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0 6px 25px rgba(255, 193, 7, 0.4);
+  box-shadow: 0 6px 25px rgba(245, 158, 11, 0.3);
   transform: translateY(20px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -563,7 +565,7 @@ html {
 
 .btn-service-quick:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 35px rgba(255, 193, 7, 0.6);
+  box-shadow: 0 8px 35px rgba(245, 158, 11, 0.4);
 }
 
 .service-info {
@@ -572,7 +574,7 @@ html {
 }
 
 .service-info h3 {
-  color: var(--azul-marinho);
+  color: var(--preto-suave);
   margin-bottom: 15px;
   font-size: 1.5rem;
   font-family: 'Poppins', sans-serif;
@@ -588,11 +590,11 @@ html {
 /* CTA Container */
 .cta-container {
   margin-top: 80px;
-  background: linear-gradient(135deg, var(--azul-marinho), var(--azul-primario));
+  background: var(--cinza-escuro);
   padding: 70px 50px;
   border-radius: 25px;
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 51, 102, 0.25);
+  box-shadow: 0 20px 60px rgba(55, 65, 81, 0.25);
   position: relative;
   overflow: hidden;
 }
@@ -604,7 +606,7 @@ html {
   right: -100px;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(255, 193, 7, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
   border-radius: 50%;
 }
 
@@ -632,7 +634,7 @@ html {
 
 /* Sobre */
 .sobre {
-  background-color: var(--cinza-claro);
+  background-color: var(--branco);
   padding: 100px 0;
 }
 
@@ -673,17 +675,17 @@ html {
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--branco);
+  color: var(--preto-suave);
   font-weight: 900;
   font-size: 1.1rem;
   width: 28px;
   height: 28px;
-  background: linear-gradient(135deg, var(--amarelo), var(--amarelo-escuro));
+  background: linear-gradient(135deg, var(--amarelo-primario), var(--amarelo-hover));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 10px rgba(255, 193, 7, 0.3);
+  box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3);
 }
 
 .sobre-stats {
@@ -703,7 +705,7 @@ html {
 .stat-number {
   font-size: 3.5rem;
   font-weight: 900;
-  background: linear-gradient(135deg, var(--azul-primario), var(--azul-marinho));
+  background: linear-gradient(135deg, var(--cinza-escuro), var(--preto-suave));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -725,22 +727,22 @@ html {
 .sobre-image img {
   width: 100%;
   border-radius: 25px;
-  box-shadow: 0 25px 80px rgba(0, 51, 102, 0.2);
+  box-shadow: 0 25px 80px rgba(229, 231, 235, 0.4);
 }
 
 .image-badge {
   position: absolute;
   bottom: 25px;
   right: 25px;
-  background: linear-gradient(135deg, var(--amarelo), var(--amarelo-escuro));
-  color: var(--azul-marinho);
+  background: linear-gradient(135deg, var(--amarelo-primario), var(--amarelo-hover));
+  color: var(--preto-suave);
   padding: 18px 30px;
   border-radius: 15px;
   font-weight: 800;
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 10px 40px rgba(255, 193, 7, 0.5);
+  box-shadow: 0 10px 40px rgba(245, 158, 11, 0.3);
 }
 
 .image-badge span {
@@ -755,7 +757,7 @@ html {
 
 /* Depoimentos */
 .testimonials {
-  background-color: var(--branco);
+  background-color: var(--cinza-clarissimo);
   padding: 100px 0;
 }
 
@@ -770,9 +772,9 @@ html {
   background-color: var(--branco);
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 51, 102, 0.08);
+  box-shadow: 0 10px 40px rgba(229, 231, 235, 0.4);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid transparent;
+  border: 2px solid var(--cinza-medio-claro);
   position: relative;
 }
 
@@ -782,22 +784,22 @@ html {
   top: 20px;
   left: 25px;
   font-size: 5rem;
-  color: rgba(0, 102, 204, 0.08);
+  color: rgba(229, 231, 235, 0.5);
   font-family: Georgia, serif;
   line-height: 1;
 }
 
 .testimonial-card:hover {
   transform: translateY(-8px);
-  border-color: var(--azul-primario);
-  box-shadow: 0 20px 60px rgba(0, 102, 204, 0.15);
+  border-color: var(--amarelo-primario);
+  box-shadow: 0 20px 60px rgba(229, 231, 235, 0.6);
 }
 
 .testimonial-rating {
-  color: var(--amarelo);
+  color: var(--amarelo-primario);
   font-size: 1.6rem;
   margin-bottom: 25px;
-  text-shadow: 0 2px 5px rgba(255, 193, 7, 0.3);
+  text-shadow: 0 2px 5px rgba(245, 158, 11, 0.3);
 }
 
 .testimonial-text {
@@ -819,7 +821,7 @@ html {
 }
 
 .testimonial-author strong {
-  color: var(--azul-marinho);
+  color: var(--preto-suave);
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 1.05rem;
@@ -832,18 +834,18 @@ html {
 
 /* Contato */
 .contato {
-  background-color: var(--cinza-claro);
+  background-color: var(--branco);
   padding: 100px 0;
 }
 
 .contact-form-container {
-  background-color: var(--branco);
+  background-color: var(--cinza-clarissimo);
   padding: 60px;
   border-radius: 25px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 60px rgba(229, 231, 235, 0.4);
   max-width: 900px;
   margin: 0 auto 60px;
-  border: 2px solid var(--cinza-claro);
+  border: 2px solid var(--cinza-medio-claro);
 }
 
 .contact-form {
@@ -866,7 +868,7 @@ html {
 .form-group label {
   margin-bottom: 10px;
   font-weight: 700;
-  color: var(--azul-marinho);
+  color: var(--preto-suave);
   font-family: 'Poppins', sans-serif;
   font-size: 0.95rem;
 }
@@ -875,21 +877,21 @@ html {
 .form-group select,
 .form-group textarea {
   padding: 16px 20px;
-  border: 2px solid var(--cinza-claro);
+  border: 2px solid var(--cinza-medio-claro);
   border-radius: 12px;
   font-size: 1rem;
   font-family: 'Inter', sans-serif;
   transition: all 0.3s;
-  background-color: var(--cinza-claro);
+  background-color: var(--branco);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--azul-primario);
+  border-color: var(--amarelo-primario);
   background-color: var(--branco);
-  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1);
 }
 
 .btn-submit {
@@ -909,18 +911,18 @@ html {
 
 .success-message {
   text-align: center;
-  background-color: var(--branco);
+  background-color: var(--cinza-clarissimo);
   padding: 70px;
   border-radius: 25px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(229, 231, 235, 0.4);
   margin-bottom: 60px;
-  border: 3px solid var(--amarelo);
+  border: 3px solid var(--amarelo-primario);
 }
 
 .success-icon {
   width: 90px;
   height: 90px;
-  background: linear-gradient(135deg, var(--azul-primario), var(--azul-marinho));
+  background: linear-gradient(135deg, var(--cinza-escuro), var(--preto-suave));
   color: var(--branco);
   border-radius: 50%;
   display: flex;
@@ -929,11 +931,11 @@ html {
   font-size: 3rem;
   margin: 0 auto 35px;
   font-weight: 700;
-  box-shadow: 0 10px 40px rgba(0, 102, 204, 0.3);
+  box-shadow: 0 10px 40px rgba(55, 65, 81, 0.3);
 }
 
 .success-message h3 {
-  color: var(--azul-marinho);
+  color: var(--preto-suave);
   font-size: 2.5rem;
   margin-bottom: 25px;
   font-family: 'Poppins', sans-serif;
@@ -948,7 +950,7 @@ html {
 }
 
 .success-message a {
-  color: var(--azul-primario);
+  color: var(--amarelo-primario);
   font-weight: 700;
   text-decoration: none;
 }
@@ -957,8 +959,19 @@ html {
   text-decoration: underline;
 }
 
+.floating-whatsapp,
 .floating-top {
+  position: fixed;
+  right: 30px;
+  z-index: 999;
+}
+
+.floating-whatsapp {
   bottom: 30px;
+}
+
+.floating-top {
+  bottom: 100px;
 }
 
 .floating-whatsapp button,
@@ -980,7 +993,7 @@ html {
 }
 
 .floating-top button {
-  background: linear-gradient(135deg, var(--azul-primario), var(--azul-marinho));
+  background: linear-gradient(135deg, var(--cinza-escuro), var(--preto-suave));
   font-size: 1.5rem;
 }
 
@@ -991,12 +1004,12 @@ html {
 }
 
 .floating-top button:hover {
-  box-shadow: 0 10px 40px rgba(0, 102, 204, 0.6);
+  box-shadow: 0 10px 40px rgba(55, 65, 81, 0.6);
 }
 
 /* Footer */
 .footer {
-  background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-primario) 100%);
+  background: var(--preto-suave);
   color: var(--branco);
   padding: 80px 0 35px;
 }
@@ -1011,7 +1024,7 @@ html {
 .footer-info h3 {
   font-size: 2.2rem;
   margin-bottom: 25px;
-  color: var(--amarelo);
+  color: var(--amarelo-primario);
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
 }
@@ -1035,7 +1048,7 @@ html {
 .footer-social h4 {
   font-size: 1.4rem;
   margin-bottom: 28px;
-  color: var(--amarelo);
+  color: var(--amarelo-primario);
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
@@ -1057,7 +1070,7 @@ html {
 }
 
 .footer-links a:hover {
-  color: var(--amarelo);
+  color: var(--amarelo-primario);
   opacity: 1;
   padding-left: 8px;
 }
@@ -1091,7 +1104,7 @@ html {
 .social-btn:hover {
   transform: translateY(-3px);
   background-color: rgba(255, 255, 255, 0.2);
-  border-color: var(--amarelo);
+  border-color: var(--amarelo-primario);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
@@ -1138,7 +1151,7 @@ html {
     width: 80%;
     max-width: 350px;
     height: 100vh;
-    background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-primario) 100%);
+    background: var(--cinza-escuro);
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 90px;
@@ -1166,7 +1179,7 @@ html {
   }
 
   .nav a:hover {
-    background-color: rgba(255, 193, 7, 0.15);
+    background-color: rgba(245, 158, 11, 0.15);
   }
 
   .nav a.nav-cta {
@@ -1259,10 +1272,6 @@ html {
 
   .section-title {
     font-size: 2rem;
-  }
-
-  .logo-text {
-    font-size: 1.6rem;
   }
 
   .btn {

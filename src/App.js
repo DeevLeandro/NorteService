@@ -15,32 +15,32 @@ function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Slides do carrossel
-  const heroSlides = [
+   const heroSlides = [
     {
       id: 1,
-      title: 'Reparos em Telhados',
-      subtitle: 'Conserto e manutenção profissional com garantia',
+      title: 'Lavagem e Pintura de Telhado',
+      subtitle: 'Serviço profissional com produtos de alta qualidade e garantia',
       image: '/images/Telhado.jpg',
       cta: 'Solicitar Orçamento'
     },
     {
       id: 2,
-      title: 'Serviços Elétricos',
-      subtitle: 'Instalações e reparos com segurança certificada',
-      image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80',
+      title: 'Construção e Reformas',
+      subtitle: 'Executamos sua obra com qualidade, segurança e no prazo',
+      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80',
       cta: 'Solicitar Orçamento'
     },
     {
       id: 3,
-      title: 'Montagem de Móveis',
-      subtitle: 'Montagem rápida e eficiente de qualquer móvel',
-      image: '/images/Moveis.jpg',
+      title: 'Instalação Elétrica e Hidráulica',
+      subtitle: 'Soluções completas com profissionais certificados',
+      image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80',
       cta: 'Solicitar Orçamento'
     },
     {
       id: 4,
-      title: 'Desentupimento',
-      subtitle: 'Soluções rápidas para pias, ralos e fossas',
+      title: 'Desentupimento Especializado',
+      subtitle: 'Equipamentos modernos para resolver seu problema rapidamente',
       image: '/images/Esgoto.webp',
       cta: 'Solicitar Orçamento'
     }
@@ -178,49 +178,76 @@ function App() {
     window.open('https://instagram.com/norteservice10', '_blank');
   };
 
+    const openFacebook = () => {
+    window.open('https://Facebook.com/norteservice', '_blank');
+  };
 
-  const services = [
+    const services = [
     {
       id: 1,
-      name: 'Reparos em Telhados',
-      description: 'Conserto e manutenção completa de telhados, telhas e calhas com materiais de qualidade',
+      name: 'Lavagem, Manutenção e Pintura de Telhado',
+      description: 'Serviço completo de limpeza, reparo e pintura de telhados com produtos de alta durabilidade',
       image: '/images/Telhado.jpg'
     },
     {
       id: 2,
-      name: 'Manutenção de Caixa d\'Água',
-      description: 'Limpeza profunda, reparo e instalação de caixas d\'água com garantia',
-      image: '/images/CaixaAgua.jpg'
+      name: 'Construção e Reformas',
+      description: 'Execução de obras, reformas e melhorias residenciais e comerciais com qualidade',
+      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80'
     },
     {
       id: 3,
-      name: 'Instalação de Calhas',
-      description: 'Instalação, limpeza e manutenção de calhas e rufos com eficiência',
-      image: '/images/Calha.webp'
+      name: 'Pinturas em Geral',
+      description: 'Pintura interna e externa de paredes, portas, janelas e móveis com acabamento profissional',
+      image: '/images/pinturas.jpg'
     },
     {
       id: 4,
-      name: 'Reparos Elétricos',
-      description: 'Serviços elétricos residenciais e comerciais com total segurança',
-      image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80'
+      name: 'Lavagem e Manutenção de Caixa d\'Água',
+      description: 'Limpeza profunda, higienização e reparos em caixas d\'água com produtos adequados',
+      image: '/images/CaixaAgua.jpg'
     },
     {
       id: 5,
-      name: 'Montagem de Móveis',
-      description: 'Montagem profissional e rápida de móveis de todos os tipos e marcas',
-      image: '/images/Moveis.jpg'
+      name: 'Limpeza e Manutenção de Calhas em Altura',
+      description: 'Limpeza especializada de calhas, rufos e condutores verticais com segurança',
+      image: '/images/Calha.webp'
     },
     {
       id: 6,
-      name: 'Instalação de TV e Quadros',
-      description: 'Fixação segura de TVs, suportes e quadros na parede com precisão',
-      image: '/images/TV.jpeg'
+      name: 'Instalação e Manutenção Elétrica',
+      description: 'Serviços elétricos residenciais, comerciais e industriais com profissionais certificados',
+      image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80'
     },
     {
       id: 7,
+      name: 'Instalação e Manutenção Hidráulica',
+      description: 'Reparos, instalações e manutenção em sistemas hidráulicos e encanamentos',
+      image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&q=80'
+    },
+    {
+      id: 8,
+      name: 'Manutenção e Montagem de Móveis',
+      description: 'Montagem, desmontagem, reparo e ajuste de móveis de todos os tipos e marcas',
+      image: '/images/Moveis.jpg'
+    },
+    {
+      id: 9,
+      name: 'Fixações em Geral',
+      description: 'Instalação de quadros, prateleiras, suportes, TV, cortinas e outros itens na parede',
+      image: '/images/TV.jpeg'
+    },
+    {
+      id: 10,
       name: 'Desentupimento',
-      description: 'Desentupimento de pias, ralos, fossas e caixas de gordura',
+      description: 'Desentupimento de pias, vasos, ralos, fossas e caixas de gordura com máquina especializada',
       image: '/images/Esgoto.webp'
+    },
+    {
+      id: 11,
+      name: 'Caça Vazamentos',
+      description: 'Detecção e reparo de vazamentos em tubulações, paredes e pisos com equipamento especializado',
+      image: '/images/Cacavazamento.jpg'
     }
   ];
 
@@ -281,7 +308,7 @@ function App() {
           <div className="logo-container">
           <div className="logo">
             <img 
-              src='/images/Logo3.png' 
+              src='/images/Logo.png' 
               alt='Logo Norte Service'
               className="logo-image"
             />
@@ -553,14 +580,18 @@ function App() {
                       onChange={handleChange}
                       required
                     >
-                      <option value="">Selecione um serviço</option>
-                      <option value="Reparos em Telhados">Reparos em Telhados</option>
-                      <option value="Manutenção de Caixa d'Água">Manutenção de Caixa d'Água</option>
-                      <option value="Instalação de Calhas">Instalação de Calhas</option>
-                      <option value="Reparos Elétricos">Reparos Elétricos</option>
-                      <option value="Montagem de Móveis">Montagem de Móveis</option>
-                      <option value="Instalação de Quadros e TV">Instalação de Quadros e TV</option>
+                       <option value="">Selecione um serviço</option>
+                      <option value="Lavagem, Manutenção e Pintura de Telhado">Lavagem, Manutenção e Pintura de Telhado</option>
+                      <option value="Construção e Reformas">Construção e Reformas</option>
+                      <option value="Pinturas em Geral">Pinturas em Geral</option>
+                      <option value="Lavagem e Manutenção de Caixa d'Água">Lavagem e Manutenção de Caixa d'Água</option>
+                      <option value="Limpeza e Manutenção de Calhas em Altura">Limpeza e Manutenção de Calhas em Altura</option>
+                      <option value="Instalação e Manutenção Elétrica">Instalação e Manutenção Elétrica</option>
+                      <option value="Instalação e Manutenção Hidráulica">Instalação e Manutenção Hidráulica</option>
+                      <option value="Manutenção e Montagem de Móveis">Manutenção e Montagem de Móveis</option>
+                      <option value="Fixações em Geral">Fixações em Geral</option>
                       <option value="Desentupimento">Desentupimento</option>
+                      <option value="Caça Vazamentos">Caça Vazamentos</option>
                       <option value="Outro">Outro</option>
                     </select>
                   </div>
@@ -620,6 +651,9 @@ function App() {
               <div className="social-icons">
                 <button className="social-btn instagram-btn" onClick={openInstagram}>
                   📸 Instagram
+                </button>
+                 <button className="social-btn facebook-btn" onClick={openFacebook}>
+                  📘 Facebook
                 </button>
                 <button className="social-btn whatsapp-btn" onClick={openWhatsAppFlutuante}>
                   💬 WhatsApp
